@@ -10,7 +10,7 @@ Supports [DBD::Pg](https://github.com/bucardo/dbdpg)
 
 Follow the instructions for your database library:
 
-- [DBD::Pg](#dbd-pg)
+- [DBD::Pg](#dbdpg)
 
 ## DBD::Pg
 
