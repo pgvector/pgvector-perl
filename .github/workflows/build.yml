@@ -15,5 +15,5 @@ jobs:
           cd pgvector
           make
           sudo make install
-      - run: cpan -T DBD::Pg
+      - run: sudo apt-get install libdbd-pg-perl
       - run: perl example.pl
