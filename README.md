@@ -49,6 +49,8 @@ Add an approximate index
 
 ```perl
 $dbh->do('CREATE INDEX my_index ON items USING ivfflat (embedding vector_l2_ops)');
+# or
+$dbh->do('CREATE INDEX my_index ON items USING hnsw (embedding vector_l2_ops)');
 ```
 
 Use `vector_ip_ops` for inner product and `vector_cosine_ops` for cosine distance
