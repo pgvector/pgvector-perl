@@ -14,10 +14,16 @@ Follow the instructions for your database library:
 
 ## DBD::Pg
 
+Enable the extension
+
+```perl
+$dbh->do('CREATE EXTENSION IF NOT EXISTS vector');
+```
+
 Create a table
 
 ```perl
-$dbh->do('CREATE TABLE items (embedding vector(3))');
+$dbh->do('CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3))');
 ```
 
 Insert vectors
@@ -41,7 +47,7 @@ my $sth = $dbh->prepare('SELECT * FROM items ORDER BY embedding <-> $1 LIMIT 5')
 my @embedding = (1, 1, 1);
 $sth->execute(vector(\@embedding));
 while (my @row = $sth->fetchrow_array()) {
-    print($row[0] . "\n");
+    print($row[1] . "\n");
 }
 ```
 
