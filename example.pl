@@ -23,4 +23,4 @@ while (my @row = $sth->fetchrow_array()) {
     print($row[1] . "\n");
 }
 
-$dbh->do('CREATE INDEX my_index ON items USING ivfflat (embedding vector_l2_ops)');
+$dbh->do('CREATE INDEX ON items USING hnsw (embedding vector_l2_ops)');
