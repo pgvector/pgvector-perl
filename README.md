@@ -4,7 +4,7 @@
 
 Supports [DBD::Pg](https://github.com/bucardo/dbdpg)
 
-[![Build Status](https://github.com/pgvector/pgvector-perl/workflows/build/badge.svg?branch=master)](https://github.com/pgvector/pgvector-perl/actions)
+[![Build Status](https://github.com/pgvector/pgvector-perl/actions/workflows/build.yml/badge.svg)](https://github.com/pgvector/pgvector-perl/actions)
 
 ## Getting Started
 
