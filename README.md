@@ -16,6 +16,7 @@ Or check out some examples:
 
 - [Embeddings](examples/openai/example.pl) with OpenAI
 - [Binary embeddings](examples/cohere/example.pl) with Cohere
+- [Hybrid search](examples/hybrid/example.pl) with Ollama (Reciprocal Rank Fusion)
 
 ## DBD::Pg
 
