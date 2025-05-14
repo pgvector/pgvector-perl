@@ -12,6 +12,10 @@ Follow the instructions for your database library:
 
 - [DBD::Pg](#dbdpg)
 
+Or check out an example:
+
+- [Embeddings](examples/openai/example.pl) with OpenAI
+
 ## DBD::Pg
 
 Enable the extension
@@ -79,5 +83,13 @@ git clone https://github.com/pgvector/pgvector-perl.git
 cd pgvector-perl
 createdb pgvector_perl_test
 cpan DBD::Pg
+perl example.pl
+```
+
+To run an example:
+
+```sh
+cd examples/openai
+createdb pgvector_example
 perl example.pl
 ```
