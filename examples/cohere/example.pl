@@ -10,12 +10,14 @@ $dbh->do('DROP TABLE IF EXISTS documents');
 $dbh->do('CREATE TABLE documents (id bigserial PRIMARY KEY, content text, embedding bit(1536))');
 
 sub embed {
+    my ($texts, $input_type) = @_;
+
     my $api_key = $ENV{CO_API_KEY};
     my $url = 'https://api.cohere.com/v2/embed';
     my %data = (
-        'texts' => @_[0],
+        'texts' => $texts,
         'model' => 'embed-v4.0',
-        'input_type' => @_[1],
+        'input_type' => $input_type,
         'embedding_types' => ['ubinary']
     );
     my %headers = (
@@ -38,8 +40,8 @@ for my $i (0 .. $#documents) {
     $sth->execute($documents[$i], $embeddings[$i]);
 }
 
-my @query = ('forest');
-my @embedding = embed(\@query, 'search_query');
+my $query = 'forest';
+my @embedding = embed([$query], 'search_query');
 my $sth = $dbh->prepare('SELECT content FROM documents ORDER BY embedding <~> $1 LIMIT 5');
 $sth->execute($embedding[0]);
 while (my @row = $sth->fetchrow_array()) {
