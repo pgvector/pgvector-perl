@@ -41,9 +41,9 @@ for my $i (0 .. $#documents) {
 }
 
 my $query = 'forest';
-my @embedding = embed([$query]);
+my ($embedding) = embed([$query]);
 my $sth = $dbh->prepare('SELECT content FROM documents ORDER BY embedding <=> $1 LIMIT 5');
-$sth->execute(vector($embedding[0]));
+$sth->execute(vector($embedding));
 while (my @row = $sth->fetchrow_array()) {
     print($row[0] . "\n");
 }
