@@ -1,3 +1,4 @@
+use strict;
 use DBI;
 
 my $dbh = DBI->connect('dbi:Pg:dbname=pgvector_perl_test', '', '', {AutoCommit => 1});
