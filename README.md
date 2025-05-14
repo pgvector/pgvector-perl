@@ -12,9 +12,10 @@ Follow the instructions for your database library:
 
 - [DBD::Pg](#dbdpg)
 
-Or check out an example:
+Or check out some examples:
 
 - [Embeddings](examples/openai/example.pl) with OpenAI
+- [Binary embeddings](examples/cohere/example.pl) with Cohere
 
 ## DBD::Pg
 
