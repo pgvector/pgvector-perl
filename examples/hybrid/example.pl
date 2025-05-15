@@ -19,7 +19,7 @@ sub embed {
 
     # nomic-embed-text uses a task prefix
     # https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
-    my @input = map {$task_type . ': ' . $_} @$input;
+    my @input = map { $task_type . ': ' . $_ } @$input;
 
     my $url = 'http://localhost:11434/api/embed';
     my %data = (

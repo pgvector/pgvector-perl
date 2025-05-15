@@ -26,7 +26,7 @@ sub embed {
     );
 
     my $response = HTTP::Tiny->new->post($url, {content => encode_json(\%data), headers => \%headers});
-    return map {join('', map {sprintf('%08b', $_)} @{$_})} @{decode_json($response->{content})->{embeddings}->{ubinary}};
+    return map { join('', map { sprintf('%08b', $_) } @{$_})} @{decode_json($response->{content})->{embeddings}->{ubinary} };
 }
 
 my @documents = (

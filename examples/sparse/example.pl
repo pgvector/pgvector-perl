@@ -11,7 +11,7 @@ $dbh->do('CREATE TABLE documents (id bigserial PRIMARY KEY, content text, embedd
 
 sub sparsevec {
     my ($elements, $dim) = @_;
-    return '{' . join(',', map {$_->{index} . ':' . $_->{value}} @$elements) . '}/' . $dim;
+    return '{' . join(',', map { $_->{index} . ':' . $_->{value} } @$elements) . '}/' . $dim;
 }
 
 sub embed {
